@@ -1,0 +1,21 @@
+@model MyFitnessStudio.Models.Session
+
+<h1>Session Details</h1>
+
+<div>
+    <h4>Session</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.SessionID</dd>
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.SessionName</dd>
+        <dt class="col-sm-2">Date</dt>
+        <dd class="col-sm-10">@Model.SessionDate.ToShortDateString()</dd>
+        <dt class="col-sm-2">Duration</dt>
+        <dd class="col-sm-10">@Model.Duration</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.SessionID">Edit</a> |
+<a asp-action="Index">Back to List</a>

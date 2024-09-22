@@ -1,0 +1,24 @@
+@model MyFitnessStudio.Models.Session
+
+<h1>Create Session</h1>
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="SessionName"></label>
+        <input asp-for="SessionName" />
+        <span asp-validation-for="SessionName"></span>
+    </div>
+    <div>
+        <label asp-for="SessionDate"></label>
+        <input asp-for="SessionDate" type="datetime-local" />
+        <span asp-validation-for="SessionDate"></span>
+    </div>
+    <div>
+        <label asp-for="Duration"></label>
+        <input asp-for="Duration" type="time" />
+        <span asp-validation-for="Duration"></span>
+    </div>
+    <button type="submit">Create</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

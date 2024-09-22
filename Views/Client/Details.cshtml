@@ -1,0 +1,21 @@
+@model MyFitnessStudio.Models.Client 
+
+<h1>Client Details</h1>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.ClientID</dd>
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.ClientName</dd>
+        <dt class="col-sm-2">Address</dt>
+        <dd class="col-sm-10">@Model.ClientAddress</dd>
+        <dt class="col-sm-2">Date of Birth</dt>
+        <dd class="col-sm-10">@Model.ClientDOB.ToShortDateString()</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.ClientID">Edit</a> |
+<a asp-action="Index">Back to List</a>

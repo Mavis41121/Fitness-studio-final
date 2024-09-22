@@ -1,0 +1,25 @@
+@model MyFitnessStudio.Models.Client 
+
+<h1>Edit Client</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ClientID" />
+    <div>
+        <label asp-for="ClientName"></label>
+        <input asp-for="ClientName" />
+        <span asp-validation-for="ClientName"></span>
+    </div>
+    <div>
+        <label asp-for="ClientAddress"></label>
+        <input asp-for="ClientAddress" />
+        <span asp-validation-for="ClientAddress"></span>
+    </div>
+    <div>
+        <label asp-for="ClientDOB"></label>
+        <input asp-for="ClientDOB" type="date" />
+        <span asp-validation-for="ClientDOB"></span>
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

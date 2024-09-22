@@ -1,0 +1,38 @@
+@model IEnumerable<MyFitnessStudio.Models.Session> 
+
+<h1>Session List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Duration</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var session in Model)
+    {
+        <tr>
+            <td>@session.SessionID</td>
+            <td>@session.SessionName</td>
+            <td>@session.SessionDate.ToShortDateString()</td>
+            <td>@session.Duration</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@session.SessionID">Details</a> |
+                <a asp-action="Edit" asp-route-id="@session.SessionID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@session.SessionID">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New Session</a>
+
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New Session</a>

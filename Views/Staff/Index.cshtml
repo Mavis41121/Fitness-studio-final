@@ -1,0 +1,33 @@
+@model IEnumerable<MyFitnessStudio.Models.Staff>
+
+<h1>Staff List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var staff in Model)
+    {
+        <tr>
+            <td>@staff.StaffID</td>
+            <td>@staff.StaffName</td>
+            <td>@staff.StaffAddress</td>
+            <td>@staff.StaffDOB.ToShortDateString()</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@staff.StaffID">Details</a> |
+                <a asp-action="Edit" asp-route-id="@staff.StaffID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@staff.StaffID">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New Staff</a>
